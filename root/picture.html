@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>上传图片</title>
+    </head>
+    <body><br/>
+<br/>
+<div align="center"><font size="5"> <strong>你居然想看图，不想关注我</strong></font></div>
+<br/>
+<!--<div  align="center">a w s l</div>-->
+<br/>
+<br/>
+<!-- <div align="center"><img src="./xxx.jpg" title="hi" width=30%/></div> -->
+
+<!-- <input type="file" id="file-uploader">上传图片</input> -->
+<div class="upload" align="center">
+    <font size="5"> <strong>小伙伴们，上传自己喜欢的图片</strong></font> <br/>
+    <img src="./xxx.jpg" alt="上传图片" style="width: 30%;background:gray;">    <br/>
+    <button><font size="5"></font><strong>点击上传</strong></font></button>
+    <input type="file" style="display:none" class="fileDoms" onchange="changeFile()"/>
+</div>
+<!-- 链接：https://blog.csdn.net/JSON_J/article/details/127732148 -->
+</body>
+<script>
+    let btn  = document.querySelector(".upload button")
+    let img = document.querySelector(".upload img")
+    const fileInputs = document.querySelector('.fileDoms')
+    btn.onclick = btnclick
+    function btnclick(){
+        fileInputs.click()
+    }
+    function changeFile(){
+        console.log("上传")
+        let reader = new FileReader();
+        reader.readAsDataURL(fileInputs.files[0]);
+        reader.onload = function(a){
+            img.src = a.target.result; //等同于reader.result
+            console.log(a,reader,reader.result);  
+        }
+    }
+    </script>
+<!-- 链接：https://blog.csdn.net/JSON_J/article/details/127732148 -->
+</html>

@@ -1,0 +1,3 @@
+/root/cpp_project/TinyWebServer/build/CMakeFiles/rebuild_cache.dir
+/root/cpp_project/TinyWebServer/build/CMakeFiles/server.dir
+/root/cpp_project/TinyWebServer/build/CMakeFiles/edit_cache.dir

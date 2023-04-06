@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>上传视频</title>
+    </head>
+    <body><br/>
+<br/>
+<div align="center"><font size="5"> <strong>你居然想看视频，不想关注我</strong></font></div>
+<br/>
+
+<br/>
+<br/>
+<!-- <div align="center"><video width="906" height="506" controls>
+    <source src="xxx.mp4" type="video/mp4">
+</video></div> -->
+
+<div class="upload" align="center">
+    <font size="5"> <strong>小伙伴们，上传自己喜欢的视频</strong></font> <br/>
+    <!-- width="40%" -->
+    <!-- <video  width="906" controls>          
+    <source src="xxx.mp4" type="video/mp4">
+    </video>     -->
+    <video src="xxx.mp4" controls="controls" width="40%"
+           preload="auto">
+    </video>
+    <br/>
+    <button><font size="5"></font><strong>点击上传</strong></font></button> <br/>
+    暂时只支持mp4和webm格式的视频，见谅
+    <input type="file" style="display:none" class="fileDoms" onchange="changeFile()"/>
+</div>
+</body>
+<script>
+    let btn  = document.querySelector(".upload button")
+    let video = document.querySelector(".upload video")
+    const fileInputs = document.querySelector('.fileDoms')
+    btn.onclick = btnclick
+    function btnclick(){
+        fileInputs.click()
+    }
+    function changeFile(){
+        console.log("上传")
+        let reader = new FileReader();
+        reader.readAsDataURL(fileInputs.files[0]);
+        reader.onload = function(a){
+            video.src = a.target.result; //等同于reader.result
+            console.log(a,reader,reader.result);  
+        }
+    }
+    </script>
+</html>
